@@ -9,36 +9,80 @@ var box7 = document.querySelector("#seven");
 var box8 = document.querySelector("#eight");
 var box9 = document.querySelector("#nine");
 var boxArray = [box1, box2, box3, box4, box5, box6, box7, box8, box9];
+var win1 = [box1, box2, box3];
+var win2 = [box4, box5, box6];
+var win3 = [box7, box8, box9];
+var win4 = [box1, box4, box7];
+var win5 = [box2, box5, box8];
+var win6 = [box3, box6, box9];
+var win7 = [box7, box5, box3];
+var win8 = [box1, box5, box9];
+var gameOver;
 var playerOne = document.querySelector("#playerOne");
 var playerTwo = document.querySelector("#playerTwo");
-
-// this code adds an event listener to the container and when you click, turns that box red
 var playerTurn = 1;
-function addOne() {
-  playerTurn++;
-}
-
-// red player one, green player two
+// this code adds an event listener to the container and when you click, turns that box red
+// red player one, green player two // current players turn is shown via the big old blue box, it's very pretty
 container.addEventListener("click", function (event) {
+  if (gameOver === true) {
+    return;
+  }
   var click = event.target;
   if (event.target.classList.length === 0 && playerTurn % 2 !== 0) {
     click.classList.add("red-background"),
       addOne(),
-      playerOne.classList.add("blue-background"),
-      playerTwo.classList.remove("blue-background");
+      playerTwo.classList.add("blue-background"),
+      playerOne.classList.remove("blue-background");
+    winCheck();
   } else if (event.target.classList.length === 0 && playerTurn % 2 === 0) {
     click.classList.add("green-background"), addOne();
-    playerTwo.classList.add("blue-background"),
-      playerOne.classList.remove("blue-background");
+    playerOne.classList.add("blue-background"),
+      playerTwo.classList.remove("blue-background");
+    winCheck();
   }
 });
+// adds one to the playerTurn variable. I know why I have it, what it does and how it works. What I don't remember is why I put it here.
+function addOne() {
+  playerTurn++;
+}
 
-// if (boxArray[0, 1, 2].class === 'red-background') {
-
-// }
-
-// this code effectively switched between players, currently red and green
-
-//   if boxes 123 or 546 or 789 = red.background then red wins
-//if 147, 258, 369 have red, red win
-// if 753, 159 have red then red win
+// This one is called winCheck but it also checks for draws, so gameHasEnded but that's less catchy.
+// the i value cylces through the elements of the winarrays and the following code checks each element to see if it contains either red or green
+// I'm almost certain I could do this in more concise way, however this to me is easily readable and well... it works.
+// The math in the if statements is pretty simple and is copied from above.
+// player one starts with the turn counter at 1, an odd number
+// Player 2 goes next with an even number playerTurn
+// basically the code from our Odd and Even exercise from a while ago.
+function winCheck() {
+  var winCondition = false;
+  var winArrays = [win1, win2, win3, win4, win5, win6, win7, win8];
+  for (var i = 0; i < winArrays.length; i++) {
+    if (
+      winArrays[i][0].classList.contains("red-background") &&
+      winArrays[i][1].classList.contains("red-background") &&
+      winArrays[i][2].classList.contains("red-background")
+    ) {
+      winCondition = true;
+    } else if (
+      winArrays[i][0].classList.contains("green-background") &&
+      winArrays[i][1].classList.contains("green-background") &&
+      winArrays[i][2].classList.contains("green-background")
+    ) {
+      winCondition = true;
+    }
+  }
+  if (playerTurn <= 10 && playerTurn % 2 === 0 && winCondition === true) {
+    gameOver = true;
+    console.log("Congrats Player 1, You are a Winner");
+  } else if (
+    playerTurn <= 10 &&
+    playerTurn % 2 !== 0 &&
+    winCondition === true
+  ) {
+    gameOver = true;
+    console.log("Congrats Play 2, you are a winner");
+  } else if (playerTurn > 9) {
+    gameOver = true;
+    console.log("its a draw");
+  }
+}
