@@ -17,8 +17,7 @@ A simple game of Tic-Tac-Toe.
 - How to switch between players
 - How to stop the code from running when the victory/draw condition had been met.
 - How to center a div. (ha ha)
-
-![Wireframing](https://imgur.com/a/RO6nTwD)
+![Pre-Planning Layout and Basic Logic](https://i.imgur.com/uzcHsqN.png)
 
 ## :rocket: Languages Used
 - HTML | Javascript | CSS
