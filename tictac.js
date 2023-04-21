@@ -1,3 +1,4 @@
+var wLD = document.querySelector("#winLoseDraw");
 var container = document.querySelector("#container");
 var box1 = document.querySelector("#one");
 var box2 = document.querySelector("#two");
@@ -73,16 +74,21 @@ function winCheck() {
   }
   if (playerTurn <= 10 && playerTurn % 2 === 0 && winCondition === true) {
     gameOver = true;
-    console.log("Congrats Player 1, You are a Winner");
+    wLD.innerHTML = "Player 1 Wins!";
   } else if (
     playerTurn <= 10 &&
     playerTurn % 2 !== 0 &&
     winCondition === true
   ) {
     gameOver = true;
-    console.log("Congrats Play 2, you are a winner");
+    wLD.innerHTML = "Player 2 Wins!";
   } else if (playerTurn > 9) {
     gameOver = true;
+    wLD.innerHTML = "It's a draw!";
+    playerTwo.classList.remove("blue-background");
     console.log("its a draw");
   }
 }
+
+// for today, need to append an element, to display who won or if it was a draw
+// needs styling and some personality put into it. but it works.

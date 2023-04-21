@@ -65,3 +65,7 @@ main {
   align-items: center;
   justify-content: center;
 }
+footer {
+  grid-column: 2;
+  grid-row: 3;
+}
