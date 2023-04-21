@@ -64,8 +64,14 @@ A simple game of Tic-Tac-Toe.
 
 I learned a lot about my own understanding of the languages used in this project. To my surprise a lot of the code seemed to flow out naturally and the hurdles mentioned above didn't take very long to get past. While I'm happy that I've been able to do this I also know that there is still so much that I don't yet know. However that isn't disuading, but encouraging. I look forward to learning more.
 
+## :poop: Bugs!
+
+- Clicking and dragging results in all squares being filled
+- Spam clicking allows for multiple boxes to be selected
+
 ## :white_check_mark: Future features
 
 - Reset Button, to allow for more games to be played without a refresh.
 - A score board that keeps track of which player has won.
-- Custom images, sounds and some animation.
+- Sounds.
+- CPU Player
