@@ -7,8 +7,9 @@ body {
   display: grid;
   grid-template-columns: 300px 300px 300px;
   grid-template-rows: 300px 300px 300px;
-  background-color: rgba(107, 64, 64, 0.863);
+  background-color: rgb(54, 69, 79);
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 header {
   display: grid;
@@ -26,7 +27,7 @@ main {
   grid-column: 2;
   grid-row: 2;
   border: 2px solid rgba(0, 0, 0, 0.096);
-  background-color: rgba(255, 255, 240, 0.705);
+  background-color: rgb(255, 252, 208);
 }
 
 #container {
@@ -56,16 +57,16 @@ main {
 
 .p1-background {
   transition: 0.3s;
-  background-color: rgba(136, 0, 0, 0.692);
+  background-color: rgb(224, 176, 255);
 }
 
 .p2-background {
   transition: 0.3s;
-  background-color: rgba(56, 53, 53, 0.897);
+  background-color: rgba(214, 175, 167);
 }
 .currentP-background {
   transition: 0.8s;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 252, 208, 0.26);
 }
 #playerContainerOne {
   display: flex;
@@ -99,6 +100,6 @@ footer {
 }
 
 #winLoseDraw {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 252, 208, 0.26);
   font-size: 1.5rem;
 }
