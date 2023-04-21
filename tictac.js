@@ -74,6 +74,7 @@ function winCheck() {
   }
   if (playerTurn <= 10 && playerTurn % 2 === 0 && winCondition === true) {
     gameOver = true;
+    playerTwo.classList.remove("blue-background");
     wLD.innerHTML = "Player 1 Wins!";
   } else if (
     playerTurn <= 10 &&
@@ -81,6 +82,7 @@ function winCheck() {
     winCondition === true
   ) {
     gameOver = true;
+    playerOne.classList.remove("blue-background");
     wLD.innerHTML = "Player 2 Wins!";
   } else if (playerTurn > 9) {
     gameOver = true;
