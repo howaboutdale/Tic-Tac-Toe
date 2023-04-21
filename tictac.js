@@ -22,23 +22,23 @@ var gameOver;
 var playerOne = document.querySelector("#playerOne");
 var playerTwo = document.querySelector("#playerTwo");
 var playerTurn = 1;
-// this code adds an event listener to the container and when you click, turns that box red
-// red player one, green player two // current players turn is shown via the big old blue box, it's very pretty
+// this code adds an event listener to the container and when you click, turns that box p1
+// p1 player one, p2 player two // current players turn is shown via the big old currentP box, it's very pretty
 container.addEventListener("click", function (event) {
   if (gameOver === true) {
     return;
   }
   var click = event.target;
   if (event.target.classList.length === 0 && playerTurn % 2 !== 0) {
-    click.classList.add("red-background"),
+    click.classList.add("p1-background"),
       addOne(),
-      playerTwo.classList.add("blue-background"),
-      playerOne.classList.remove("blue-background");
+      playerTwo.classList.add("currentP-background"),
+      playerOne.classList.remove("currentP-background");
     winCheck();
   } else if (event.target.classList.length === 0 && playerTurn % 2 === 0) {
-    click.classList.add("green-background"), addOne();
-    playerOne.classList.add("blue-background"),
-      playerTwo.classList.remove("blue-background");
+    click.classList.add("p2-background"), addOne();
+    playerOne.classList.add("currentP-background"),
+      playerTwo.classList.remove("currentP-background");
     winCheck();
   }
 });
@@ -48,7 +48,7 @@ function addOne() {
 }
 
 // This one is called winCheck but it also checks for draws, so gameHasEnded but that's less catchy.
-// the i value cylces through the elements of the winarrays and the following code checks each element to see if it contains either red or green
+// the i value cylces through the elements of the winarrays and the following code checks each element to see if it contains either p1 or p2
 // I'm almost certain I could do this in more concise way, however this to me is easily readable and well... it works.
 // The math in the if statements is pretty simple and is copied from above.
 // player one starts with the turn counter at 1, an odd number
@@ -59,22 +59,22 @@ function winCheck() {
   var winArrays = [win1, win2, win3, win4, win5, win6, win7, win8];
   for (var i = 0; i < winArrays.length; i++) {
     if (
-      winArrays[i][0].classList.contains("red-background") &&
-      winArrays[i][1].classList.contains("red-background") &&
-      winArrays[i][2].classList.contains("red-background")
+      winArrays[i][0].classList.contains("p1-background") &&
+      winArrays[i][1].classList.contains("p1-background") &&
+      winArrays[i][2].classList.contains("p1-background")
     ) {
       winCondition = true;
     } else if (
-      winArrays[i][0].classList.contains("green-background") &&
-      winArrays[i][1].classList.contains("green-background") &&
-      winArrays[i][2].classList.contains("green-background")
+      winArrays[i][0].classList.contains("p2-background") &&
+      winArrays[i][1].classList.contains("p2-background") &&
+      winArrays[i][2].classList.contains("p2-background")
     ) {
       winCondition = true;
     }
   }
   if (playerTurn <= 10 && playerTurn % 2 === 0 && winCondition === true) {
     gameOver = true;
-    playerTwo.classList.remove("blue-background");
+    playerTwo.classList.remove("currentP-background");
     wLD.innerHTML = "Player 1 Wins!";
   } else if (
     playerTurn <= 10 &&
@@ -82,12 +82,12 @@ function winCheck() {
     winCondition === true
   ) {
     gameOver = true;
-    playerOne.classList.remove("blue-background");
+    playerOne.classList.remove("currentP-background");
     wLD.innerHTML = "Player 2 Wins!";
   } else if (playerTurn > 9) {
     gameOver = true;
     wLD.innerHTML = "It's a draw!";
-    playerTwo.classList.remove("blue-background");
+    playerTwo.classList.remove("currentP-background");
     console.log("its a draw");
   }
 }
