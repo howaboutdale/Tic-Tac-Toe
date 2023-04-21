@@ -16,24 +16,17 @@ A simple game of Tic-Tac-Toe.
 - There were a few hurdles to get over in this project.
 - How to switch between players
 - How to stop the code from running when the victory/draw condition had been met.
-- How to center a div.
-- Add screenshots/drawings of doodles/plans during the planning phase.
-- Flow charts of app logic.
-![Wireframing](https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+- How to center a div. (ha ha)
 
-## :rocket: Cool tech
-- Programming languages
-- Libraries
-- Animations
-- Anything else you'd be proud to show your parents
+![Wireframing](https://imgur.com/a/RO6nTwD)
 
-## :scream: Bugs to fix :poop:
-- Anything a little broken
-- Anything a LOT broken
-- Buttons to not click too many times (cause its broken :unamused:)
+## :rocket: Languages Used
+- HTML | Javascript | CSS
 
 ## :sob: Lessons learnt
-What I would do differently if I could wind back the clock...
+I learned a lot about my own understanding of the languages used in this project. To my surprise a lot of the code seemed to flow out naturally and the hurdles mentioned above didn't take very long to get past. While I'm happy that I've been able to do this I also know that there is still so much that I don't yet know. However that isn't disuading, but encouraging. I look forward to learning more.
 
 ## :white_check_mark: Future features
-Cool things I would add if I can keep working on this
+- Reset Button, to allow for more games to be played without a refresh.
+- A score board that keeps track of which player has won.
+- Custom images, sounds and some animation.
