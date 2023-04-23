@@ -21,6 +21,7 @@ var win8 = [box1, box5, box9];
 var gameOver;
 var playerOne = document.querySelector("#playerOne");
 var playerTwo = document.querySelector("#playerTwo");
+var reset = document.querySelector("#reset");
 var playerTurn = 1;
 // this code adds an event listener to the container and when you click, turns that box p1
 // p1 player one, p2 player two // current players turn is shown via the big old currentP box, it's very pretty
@@ -92,5 +93,12 @@ function winCheck() {
   }
 }
 
-// for today, need to append an element, to display who won or if it was a draw
-// needs styling and some personality put into it. but it works.
+// quick and dirty reset button I made in 5 minutes
+reset.addEventListener("click", function () {
+  for (var i = 0; i < boxArray.length; i++) {
+    boxArray[i].className = "";
+    wLD.innerHTML = "";
+    gameOver = false;
+    playerTurn = 1;
+  }
+});
