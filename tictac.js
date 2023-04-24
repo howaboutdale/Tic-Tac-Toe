@@ -24,7 +24,7 @@ var playerTwo = document.querySelector("#playerTwo");
 var reset = document.querySelector("#reset");
 var playerTurn = 1;
 // this code adds an event listener to the container and when you click, turns that box p1
-// p1 player one, p2 player two // current players turn is shown via the big old currentP box, it's very pretty
+// p1 player one, p2 player two // current players turn is shown via the big old currentP box.
 container.addEventListener("click", function (event) {
   if (gameOver === true) {
     return;
